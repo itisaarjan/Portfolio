@@ -23,7 +23,7 @@ Will be soon available.
 - Smooth animations and transitions
 - Project showcase
 - Skills and experience section
-- Contact form (if applicable)
+- Contact bar
 
 ## Technologies Used
 
