@@ -18,6 +18,7 @@ export default [
       },
     },
     settings: { react: { version: '18.3' } },
+    base: "/Portfolio",
     plugins: {
       react,
       'react-hooks': reactHooks,
