@@ -17,7 +17,7 @@ function Footer() {
         <p>
           <span className="text-xs uppercase tracking-wide text-gray-500"> Contact me At </span>
 
-          <a href="#" className="block text-2xl font-medium text-gray-300 hover:opacity-75 sm:text-3xl">
+          <a href="#" className="block text-1xl font-medium text-gray-300 hover:opacity-75 sm:text-1xl">
             arjansubedi2021@gmail.com
           </a>
         </p>
