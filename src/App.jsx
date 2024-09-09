@@ -12,9 +12,11 @@ function App() {
   return (
     <>
     <Navbar/>
-    <HeroSection/>
+    <div className='m-auto w-[80%]'>
+      <HeroSection/>
     <Skills/>
     <ProjectSection/>
+    </div>
     <Footer/>
     </>
   )

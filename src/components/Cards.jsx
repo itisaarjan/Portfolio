@@ -40,7 +40,8 @@ function Cards(props) {
 
         <div className="sm:flex sm:items-end sm:justify-end">
           <a
-            href="#"
+            href={props.link}
+            target='_blank'
             className="block bg-[#00BFFF] px-5 py-3 text-center text-xs font-bold uppercase text-white transition hover:bg-[#00BFFF]/80"
           >
             Watch Demo

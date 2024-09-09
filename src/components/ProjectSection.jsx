@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import Cards from './Cards';
 import wanderLust from '../assets/wanderlustpic.jpeg';
+import financeTracker from '../assets/financetracker.png'
+import weatherApp from '../assets/weatherApp.png'
 
 function ProjectSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -46,14 +48,21 @@ function ProjectSection() {
           description="A full-stack travel website built with HTML, CSS, and JavaScript for the frontend, powered by Node.js and Express on the backend. Features secure user authentication and data validation, with MongoDB Atlas as the cloud database for efficient data management and scalability."
           year="2024"
           date="Aug"
+          link='https://wanderlust-fwwe.onrender.com/listings'
         />
         <Cards
-          imglink={wanderLust}
-          description="A full-stack travel website built with HTML, CSS, and JavaScript for the frontend, powered by Node.js and Express on the backend. Features secure user authentication and data validation, with MongoDB Atlas as the cloud database for efficient data management and scalability."
-        />
+          imglink={financeTracker}
+          description="A comprehensive personal finance tracker built with the MERN (MongoDB, Express.js, React.js, Node.js) stack. This application helps you manage and visualize your monthly expenses with secure authentication handled by Clerk."
+          year="2024"
+          date="Aug"
+          link=''
+          />
         <Cards
-          imglink={wanderLust}
-          description="A full-stack travel website built with HTML, CSS, and JavaScript for the frontend, powered by Node.js and Express on the backend. Features secure user authentication and data validation, with MongoDB Atlas as the cloud database for efficient data management and scalability."
+          imglink={weatherApp}
+          description="This is a responsive weather application built with HTML, CSS, and JavaScript. It uses the OpenWeatherMap API to fetch and display current weather data for any city."
+          year='2024'
+          date='July'
+          link='https://itisaarjan.github.io/weatherapp/'
         />
       </div>
     </div>
