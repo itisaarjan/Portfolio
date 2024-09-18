@@ -1,8 +1,42 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import icon from '../assets/favicon copy.ico';
+import gsap from 'gsap'
+import {useGSAP} from '@gsap/react'
+
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const timeline=gsap.timeline();
+  const titleref=useRef();
+  const navlinks=useRef();
+  const resumeref=useRef();
+   useGSAP(()=>{
+    const timeline = gsap.timeline();
+
+    timeline.from(titleref.current, {
+      y: -55,
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.5,
+      ease: 'power3.out'
+    });
+
+    timeline.from(navlinks.current.children, {
+      y: -60,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      ease: 'power3.out'
+    });
+
+    timeline.from(resumeref.current,{
+      y:-60,
+      opacity:0,
+      duration:0.5,
+      ease:"power3.out"
+
+    })
+   })
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,7 +50,7 @@ function Navbar() {
             <div className="md:flex md:items-center md:gap-12">
               <a className="block text-teal-600" href="#">
                 <span className="sr-only">Home</span>
-                <h1 className="text-[white] text-3xl">
+                <h1 className="text-[white] text-3xl" ref={titleref}>
                   arjan<span className="text-[#50BFBA]">.</span>
                 </h1>
               </a>
@@ -24,29 +58,29 @@ function Navbar() {
 
             <div className="hidden sm:block">
               <nav aria-label="Global">
-                <ul className="flex items-center gap-6 text-lg">
+                <ul className="flex items-center gap-6 text-lg" ref={navlinks}>
                   <li>
-                    <a className="text-[#66fcf1] transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
+                    <a className="text-[#66fcf1] links-button transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
                       About
                     </a>
                   </li>
                   <li>
-                    <a className="text-[#66fcf1] transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
+                    <a className="text-[#66fcf1] links-button transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
                       Skills
                     </a>
                   </li>
                   <li>
-                    <a className="text-[#66fcf1] transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
+                    <a className="text-[#66fcf1] links-button transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
                       Projects
                     </a>
                   </li>
                   <li>
-                    <a className="text-[#66fcf1] transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
+                    <a className="text-[#66fcf1] links-button transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
                       Experience
                     </a>
                   </li>
                   <li>
-                    <a className="text-[#66fcf1] transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
+                    <a className="text-[#66fcf1] links-button transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1" href="#">
                       Contact
                     </a>
                   </li>
@@ -56,7 +90,7 @@ function Navbar() {
 
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
-                <a className="rounded-md bg-teal-600 px-5 py-3 text-lg font-medium text-white shadow" href="#">
+                <a className="rounded-md bg-teal-600 px-5 py-3 text-lg font-medium text-white shadow" ref={resumeref} href="#">
                   Resume
                 </a>
               </div>

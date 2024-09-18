@@ -4,6 +4,7 @@ import Cards from './Cards';
 import wanderLust from '../assets/wanderlustpic.jpeg';
 import financeTracker from '../assets/financetracker.png'
 import weatherApp from '../assets/weatherApp.png'
+import simrikmed from '../assets/image.png'
 
 function ProjectSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,6 +45,13 @@ function ProjectSection() {
       </div>
       <div className='flex flex-wrap justify-center gap-6'>
         <Cards
+          imglink={simrikmed}
+          description="SimrikMed.com is a React-based medical services website I developed for a healthcare provider. It offers virtual care consultations and specialized weight loss programs. The site features a user-friendly interface with EmailJS integration for seamless patient-provider communication. Hosted on Render with a Porkbun domain, it ensures HIPAA compliance while providing accessible healthcare services. This project showcases my ability to create functional, secure, and user-centric web applications in the healthcare sector."
+          year='2024'
+          date='September'
+          link='https://simrikmed.com'
+        />
+        <Cards
           imglink={wanderLust}
           description="A full-stack travel website built with HTML, CSS, and JavaScript for the frontend, powered by Node.js and Express on the backend. Features secure user authentication and data validation, with MongoDB Atlas as the cloud database for efficient data management and scalability."
           year="2024"
@@ -57,13 +65,7 @@ function ProjectSection() {
           date="Aug"
           link=''
           />
-        <Cards
-          imglink={weatherApp}
-          description="This is a responsive weather application built with HTML, CSS, and JavaScript. It uses the OpenWeatherMap API to fetch and display current weather data for any city."
-          year='2024'
-          date='July'
-          link='https://itisaarjan.github.io/weatherapp/'
-        />
+        
       </div>
     </div>
   );
