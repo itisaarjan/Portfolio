@@ -1,25 +1,30 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import HeroSection from './components/heroSection'
-import  Cards from './components/Cards'
-import ProjectSection from './components/ProjectSection'
-import Skills from './components/skills'
-import Footer from './components/footer'
+import React, { useRef } from 'react';
+import Navbar from './components/Navbar';
+import HeroSection from './components/HeroSection';
+import Skills from './components/skills';
+import Footer from './components/footer';
+import ProjectSection from './components/ProjectSection';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const skillsSectionRef = useRef(null);
+  const footerRef = useRef(null);
+  const projectSectionRef = useRef(null);
 
   return (
     <>
-    <Navbar/>
-    <div className='m-auto w-[80%]'>
-      <HeroSection/>
-    <Skills/>
-    <ProjectSection/>
-    </div>
-    <Footer/>
+      <Navbar 
+        skillsSectionRef={skillsSectionRef}
+        projectSectionRef={projectSectionRef}
+        footerRef={footerRef}
+      />
+      <div className='m-auto w-[80%]'>
+        <HeroSection />
+        <Skills ref={skillsSectionRef} />
+        <ProjectSection ref={projectSectionRef} />
+        <Footer ref={footerRef} />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
