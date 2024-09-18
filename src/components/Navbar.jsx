@@ -1,12 +1,43 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
-import resume from '../assets/ArjanSubedi.pdf'
+import resume from '../assets/ArjanSubedi.pdf';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollToPlugin);
 
+
+
 function Navbar({ skillsSectionRef, projectSectionRef, footerRef }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const title = useRef(null);
+  const navlinks = useRef(null);
+
+  useGSAP(() => {
+    const t1 = gsap.timeline();
+    t1.from(title.current, {
+      y: -60,
+      delay: 0.5,
+      duration: 0.5,
+    });
+    t1.from(navlinks.current?.children || [], {
+      y: -60,
+      delay: 0.5,
+      duration: 0.5,
+      stagger: 0.2,
+    });
+  });
+
+  // Animate mobile navlinks when menu is opened
+  useEffect(() => {
+    if (isMenuOpen && navlinks.current) {
+      gsap.from(navlinks.current.children, {
+        y: -60,
+        duration: 0.5,
+        stagger: 0.2,
+      });
+    }
+  }, [isMenuOpen]);
 
   const scrollToSection = (sectionRef) => {
     if (sectionRef && sectionRef.current) {
@@ -32,7 +63,7 @@ function Navbar({ skillsSectionRef, projectSectionRef, footerRef }) {
           <div className="md:flex md:items-center md:gap-12">
             <a className="block text-teal-600" href="#">
               <span className="sr-only">Home</span>
-              <h1 className="text-[white] text-3xl">
+              <h1 className="text-[white] text-3xl" ref={title}>
                 arjan<span className="text-[#50BFBA]">.</span>
               </h1>
             </a>
@@ -40,7 +71,7 @@ function Navbar({ skillsSectionRef, projectSectionRef, footerRef }) {
 
           <div className="hidden sm:block">
             <nav aria-label="Global">
-              <ul className="flex items-center gap-6 text-lg">
+              <ul className="flex items-center gap-6 text-lg" ref={navlinks}>
                 <li>
                   <a
                     className="text-[#66fcf1] transition hover:text-[#66fcf1]/75 hover:border-b-2 hover:border-[#66FCF2] p-1"
@@ -73,7 +104,7 @@ function Navbar({ skillsSectionRef, projectSectionRef, footerRef }) {
             <div className="sm:flex sm:gap-4">
               <a
                 className="rounded-md bg-teal-600 px-5 py-3 text-lg font-medium text-white shadow"
-                href={resume} 
+                href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -103,7 +134,7 @@ function Navbar({ skillsSectionRef, projectSectionRef, footerRef }) {
 
         {isMenuOpen && (
           <div className="md:hidden mt-4">
-            <nav aria-label="Mobile Navigation">
+            <nav aria-label="Mobile Navigation" ref={navlinks}>
               <ul className="flex flex-col gap-6 text-lg">
                 <li>
                   <a
@@ -139,4 +170,3 @@ function Navbar({ skillsSectionRef, projectSectionRef, footerRef }) {
 }
 
 export default Navbar;
-  

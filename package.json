@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.1",
     "@mantine/carousel": "^7.12.2",
     "@material-tailwind/react": "^2.1.10",

@@ -1,7 +1,31 @@
 import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import emailjs from '@emailjs/browser'
+
+
 
 const Footer = forwardRef((props, ref) => {
   const footerRef = useRef(null);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_qbt5fep', 'template_ivgxtdm', form.current, {
+        publicKey: 'r_PVlFmC8nfnA09Zm',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert('Message sent successfully!');
+          window.location.reload(); // This will refresh the page
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alert('Failed to send message. Please try again.');
+        },
+      );
+  };
 
   useImperativeHandle(ref, () => ({
     scrollTo: () => footerRef.current?.scrollIntoView({ behavior: 'smooth' }),
@@ -89,7 +113,7 @@ const Footer = forwardRef((props, ref) => {
 
           <div className="mt-4 sm:mt-0">
             <h2 className="text-lg font-semibold text-gray-300">Contact Form</h2>
-            <form className="mt-4">
+            <form className="mt-4" ref={form} onSubmit={sendEmail}>
               <div className="mb-4">
                 <label className="block text-gray-300" htmlFor="email">Email:</label>
                 <input
@@ -97,6 +121,7 @@ const Footer = forwardRef((props, ref) => {
                   id="email"
                   required
                   className="w-full p-2 border border-gray-400 rounded"
+                  name='from_name'
                 />
               </div>
               <div className="mb-4">
@@ -106,6 +131,7 @@ const Footer = forwardRef((props, ref) => {
                   required
                   className="w-full p-2 border border-gray-400 rounded"
                   rows="3"
+                  name='from_message'
                 />
               </div>
               <button
