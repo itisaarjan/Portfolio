@@ -57,13 +57,13 @@ const ProjectSection = forwardRef((props, ref) => {
   }, [sectionRef]);
 
   return (
-    <section ref={sectionRef} className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-16'>
+    <section ref={sectionRef} className='w-[90%] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32 mb-32'>
       <div className='text-center mb-12'>
         <h1 id='projects' className='text-white text-4xl font-bold'>
           Projects
         </h1>
       </div>
-      <div className='grid grid-cols-1 gap-8 justify-items-center pl-4'>
+      <div className='grid grid-cols-1 gap-8 justify-items-center pl-4 mx-auto'>
         <div ref={el => cardsRef.current[0] = el} className="w-full max-w">
           <Cards
             imglink={simrikmed}

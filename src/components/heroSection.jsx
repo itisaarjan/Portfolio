@@ -35,7 +35,7 @@ function HeroSection() {
   }, [controls]);
 
   return (
-    <main className='grid grid-cols-2 xs:grid-cols-1 '>
+    <main className='grid grid-cols-2 xs:grid-cols-1 w-[90%] m-auto'>
       <div className='text-white w-[50vw] p-4'>
         <h1 className='text-[10.5vw]'>Hi, I am Arjan</h1>
         <h4 className='mt-4 text-white'>

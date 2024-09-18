@@ -1,6 +1,6 @@
-// Skills.jsx
+
 import React from 'react';
-import Skilllogo from './Skilllogo'; // Ensure this component is imported correctly
+import Skilllogo from './Skilllogo'; 
 import reactlogo from '../assets/logo/react.png';
 import nodelogo from '../assets/logo/node.png';
 import cpluslogo from '../assets/logo/c++.png';
@@ -14,7 +14,7 @@ import mysqllogo from '../assets/logo/mysql.png';
 
 function Skills(props, ref) {
   return (
-    <section ref={ref} className='flex items-center justify-center flex-col font-poppins mt-8'>
+    <section ref={ref} className='flex items-center justify-center flex-col font-poppins mt-16'>
       <h1 className='text-white text-4xl mb-4'>Tools that I Prefer Using</h1>
       <h4 className='text-gray-500 mb-4'>Frontend Technologies I Prefer Using</h4>
       <div className='w-[80%] max-w-[1200px] grid grid-cols-1 gap-y-12 p-4'>

@@ -8,8 +8,8 @@ const Footer = forwardRef((props, ref) => {
   }));
 
   return (
-    <footer ref={footerRef} className="bg-black lg:grid lg:grid-cols-5">
-      <div className="relative block h-32 lg:col-span-2 lg:h-full text-white">
+    <footer ref={footerRef} className="bg-black lg:grid lg:grid-cols-5 h-[6rem] p-4 w-full">
+      <div className="relative block h-24 lg:col-span-2 lg:h-full text-white">
         <img
           src="https://plus.unsplash.com/premium_photo-1663050681752-4c95effcca58?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Background"
@@ -17,24 +17,24 @@ const Footer = forwardRef((props, ref) => {
         />
       </div>
 
-      <div className="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+      <div className="px-4 py-4 sm:px-6 lg:col-span-3 lg:px-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <p>
               <span className="text-base uppercase tracking-wide text-gray-500">Contact me At</span>
               <a
                 href="mailto:arjansubedi2021@gmail.com"
-                className="block text-2xl font-medium text-gray-300 hover:opacity-75 sm:text-2xl"
+                className="block text-lg font-medium text-gray-300 hover:opacity-75"
               >
                 arjansubedi2021@gmail.com
               </a>
             </p>
 
-            <ul className="mt-8 space-y-1 text-lg text-gray-300">
+            <ul className="mt-2 space-y-1 text-sm text-gray-300">
               <li>Phone Number: +1-(813)-992-7839</li>
             </ul>
 
-            <ul className="mt-8 flex gap-6">
+            <ul className="mt-4 flex gap-4">
               <li>
                 <a
                   href="https://www.linkedin.com/in/arjansubedi/"
@@ -78,7 +78,7 @@ const Footer = forwardRef((props, ref) => {
                   <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" width="30" height="30">
                     <path
                       fillRule="evenodd"
-                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.465-1.11-1.465-.908-.62.069-.607.069-.607 1.004.07 1.533 1.033 1.533 1.033.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.111-4.555-4.945 0-1.092.39-1.985 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844a9.56 9.56 0 012.503.335c1.91-1.295 2.749-1.025 2.749-1.025.545 1.378.202 2.397.1 2.65.64.698 1.028 1.591 1.028 2.683 0 3.841-2.338 4.688-4.566 4.936.359.31.678.927.678 1.868 0 1.35-.012 2.438-.012 2.77 0 .269.18.58.688.482C19.137 20.194 22 16.441 22 12.017 22 6.484 17.522 2 12 2z"
+                      d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.26.793-.577 0-.284-.011-1.035-.017-2.031-3.338.726-4.042-1.607-4.042-1.607-.546-1.384-1.334-1.754-1.334-1.754-1.09-.743.083-.727.083-.727 1.205.085 1.836 1.237 1.836 1.237 1.069 1.834 2.805 1.303 3.49.996.108-.774.419-1.303.763-1.6-2.665-.304-5.466-1.335-5.466-5.935 0-1.313.47-2.387 1.236-3.227-.124-.304-.536-1.53.117-3.184 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844a9.56 9.56 0 012.503.335c1.91-1.295 2.749-1.025 2.749-1.025.545 1.378.202 2.397.1 2.65.64.698 1.028 1.591 1.028 2.683 0 3.841-2.338 4.688-4.566 4.936.359.31.678.927.678 1.868 0 1.35-.012 2.438-.012 2.77 0 .269.18.58.688.482C19.137 20.194 22 16.441 22 12.017 22 6.484 17.522 2 12 2z"
                       clipRule="evenodd"
                     />
                   </svg>
@@ -87,20 +87,32 @@ const Footer = forwardRef((props, ref) => {
             </ul>
           </div>
 
-          <div className="flex flex-col items-center justify-center text-lg text-gray-300">
-            <h2 className="text-2xl font-bold text-white">Stay Connected</h2>
-            <p className="mt-2">Join our newsletter for the latest updates and offers!</p>
-            <form className="mt-4 flex flex-col items-center">
-              <input
-                type="email"
-                className="w-full rounded-md border border-gray-300 p-2 text-black outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your email"
-              />
+          <div className="mt-4 sm:mt-0">
+            <h2 className="text-lg font-semibold text-gray-300">Contact Form</h2>
+            <form className="mt-4">
+              <div className="mb-4">
+                <label className="block text-gray-300" htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  className="w-full p-2 border border-gray-400 rounded"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-300" htmlFor="message">Message:</label>
+                <textarea
+                  id="message"
+                  required
+                  className="w-full p-2 border border-gray-400 rounded"
+                  rows="3"
+                />
+              </div>
               <button
                 type="submit"
-                className="mt-3 rounded-md bg-blue-500 py-2 px-4 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75"
+                className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-500"
               >
-                Subscribe
+                Send
               </button>
             </form>
           </div>
