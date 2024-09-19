@@ -88,7 +88,7 @@ const ProjectSection = forwardRef((props, ref) => {
             description="A comprehensive personal finance tracker built with the MERN (MongoDB, Express.js, React.js, Node.js) stack. This application helps you manage and visualize your monthly expenses with secure authentication handled by Clerk."
             year="2024"
             date="Aug"
-            link=''
+            link='https://github.com/itisaarjan/PersonalFinanceTracker'
           />
         </div>
       </div>
