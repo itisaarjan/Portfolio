@@ -32,7 +32,7 @@ const Footer = forwardRef((props, ref) => {
   }));
 
   return (
-    <footer ref={footerRef} className="bg-black lg:grid lg:grid-cols-5 h-[6rem] p-4 w-full">
+    <footer ref={footerRef} className="bg-black lg:grid lg:grid-cols-5  p-4 w-full">
       <div className="relative block h-24 lg:col-span-2 lg:h-full text-white">
         <img
           src="https://plus.unsplash.com/premium_photo-1663050681752-4c95effcca58?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
